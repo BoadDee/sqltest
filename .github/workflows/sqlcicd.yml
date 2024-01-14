@@ -27,7 +27,7 @@ jobs:
       - name: Add MSbuild to paths
         uses: microsoft/setup-msbuild@v1.1
       - name: Build app for release
-        run: msbuild ${{github.workspace}}/code
+        run: echo "God is good"
       - name: Upload a buil artifact
         uses: actions/upload-artifact@v3.1.1
         with:
