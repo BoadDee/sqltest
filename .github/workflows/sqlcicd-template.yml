@@ -38,7 +38,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ inputs.artifactName }}
-          path: ${{ github.workspace }}/artifact
+          path: ${{ github.workspace }}/code
       - name: Azure Login
         uses: azure/login@v1
         with:
@@ -46,9 +46,9 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       - name: Deploy dacpac
-        uses: azure/azure-sql-db-deploy@v1
+        uses: azure/sql-action@v2.2.1
         with:
           #server-name: ${{ secrets.AZURE_SERVER_NAME }}
           connection-string: ${{ secrets.AZURE_CONNECTION_STRING }}
-          path-to-dacpac: ${{ github.workspace }}/${{ inputs.dacpacName }}
+          path: ${{ github.workspace }}/${{ inputs.dacpacName }}
           action: Publish
