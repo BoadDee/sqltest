@@ -27,12 +27,12 @@ jobs:
       - name: Add MSbuild to paths
         uses: microsoft/setup-msbuild@v1.1
       - name: Build app for release
-        run: msbuild ${{github.workspace}}/code
+        run: echo "God is good"
       - name: Upload a buil artifact
         uses: actions/upload-artifact@v3.1.1
         with:
           name: SQLDacpac
-          path: ${{github.workspace}}/code
+          path: ${{github.workspace}}/code/sql
 
   deploy_de:
     uses: ./.github/workflows/sqlcicd-template.yml
@@ -40,7 +40,7 @@ jobs:
     with:
         environment: de
         artifactName: SQLDacpac
-        dacpacName: openai-sql-db.dacpac
+        dacpacName: sql.dacpac
 
     secrets:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
