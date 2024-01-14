@@ -50,5 +50,5 @@ jobs:
         with:
           #server-name: ${{ secrets.AZURE_SERVER_NAME }}
           connection-string: ${{ secrets.AZURE_CONNECTION_STRING }}
-          path: ${{ github.workspace }}/code
+          path: ${{ github.workspace }}/${{ inputs.dacpacName }}
           action: Publish
