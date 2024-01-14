@@ -38,7 +38,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ${{ inputs.artifactName }}
-          path: ${{ github.workspace }}/artifact
+          path: ${{ github.workspace }}/code
       - name: Azure Login
         uses: azure/login@v1
         with:
