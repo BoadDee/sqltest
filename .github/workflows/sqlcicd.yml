@@ -24,13 +24,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-     # - name: Add MSbuild to paths
-      #  uses: microsoft/setup-msbuild@v1.1
-     # - name: Build app for release
-       # run: echo "God is good"
-      - name: Build database project
-        run: |
-          dotnet build
+      - name: Add MSbuild to paths
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Build app for release
+        run: echo "God is good"
       - name: Upload a buil artifact
         uses: actions/upload-artifact@v3.1.1
         with:
