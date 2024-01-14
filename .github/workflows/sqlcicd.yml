@@ -40,7 +40,7 @@ jobs:
     with:
         environment: de
         artifactName: SQLDacpac
-        dacpacName: openai-sql-db.dacpac
+        dacpacName: sql.dacpac
 
     secrets:
         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
