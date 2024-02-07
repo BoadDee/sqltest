@@ -6,7 +6,7 @@
     <Name>dare_sql_db</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{8a2d24db-3efa-4fac-84fc-b2ee1a760221}</ProjectGuid> # check later
+    <ProjectGuid>{b306dcca-4049-48d2-9fb8-f79af057dc40}</ProjectGuid> # check later
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
