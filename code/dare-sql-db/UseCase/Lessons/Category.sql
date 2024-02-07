@@ -1,0 +1,8 @@
+CREATE TABLE [LESSON].[CATEGORY] (
+    [id] INT NOT NULL PRIMARY KEY,
+    [Name] NVARCHAR(50) NOT NULL,
+    [CreatedOn] DATETIME NULL,
+    [CreatedBy] NVARCHAR(250) NULL,
+    [updatedOn] DATETIME NULL,
+    [updatedBy] NVARCHAR(250) NULL
+);

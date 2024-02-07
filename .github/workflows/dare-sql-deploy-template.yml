@@ -1,0 +1,69 @@
+name: dare-sql-deploy-template
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        description: 'The environment to deploy to'
+        required: true
+      artifactName:
+        description: 'The name of the artifact to download'
+        required: true
+      dacpacName:
+        description: 'The name of the dacpac file'  
+        required: true
+
+      # server:
+      #   required: true
+      # database:
+      #   required: true
+      # username:
+      #   required: true
+      # password:
+      #   required: true
+    
+    secrets:
+      AZURE_CLIENT_ID:
+        required: true
+      AZURE_TENANT_ID:
+        required: true
+      AZURE_SUBSCRIPTION_ID:
+        required: true
+
+permissions:
+  id-token: write
+  contents: read
+  
+jobs:
+  deploy:
+    runs-on: windows-latest #[Self-hosted, windows-latest, cac]
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Download Dacpac
+        uses: actions/download-artifact@v2.1,1
+        with:
+          name: ${{ inputs.artifactName }}
+          path: ${{ github.workspace }}
+
+      - name: List
+        run: ls -R ${{ github.workspace }}
+
+      - name: Deploy dacpac
+        uses: Azure/sql-action@v2.2
+        with:
+          server-name: ${{ secrets.SQL_SERVER }}
+          database-name: ${{ secrets.SQL_DATABASE }}
+          auth: 'service-principal'
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          dacpac-package: ${{ github.workspace }}/dare-sql-db/${{ inputs.dacpacName }}
+          additional-arguments: '/p:BlockOnPossibleDataLoss=false'
+
+      - name: Deploy dacpac
+        uses: Azure/sql-action@v2.2
+        with:
+          connection-string:
+          path: ${{ github.workspace }}/${{ inputs.dacpacName }}
+          additional-arguments: '/p:BlockOnPossibleDataLoss=false'
+          action: 'Publish'
