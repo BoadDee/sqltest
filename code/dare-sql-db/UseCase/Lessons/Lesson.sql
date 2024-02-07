@@ -1,0 +1,13 @@
+CREATE TABLE [LESSON].[LESSON] (
+    [id] INT NOT NULL PRIMARY KEY,
+    [Title] NVARCHAR(50) NULL,
+    [Description] NVARCHAR(250) NULL,
+    [Image] NVARCHAR(250) NULL,
+    [Recommendation] NVARCHAR(250) NULL,
+    [Notes] NVARCHAR(250) NULL,
+    [LessonStatus] NVARCHAR(50) NULL,
+    [ProjectId] INT NULL,
+    [createdOn] DATETIME NULL,
+    [updatedOn] DATETIME NULL,
+  CONTRAINT [FK_LESSON_PROJECT] FOREIGN KEY ([ProjectId]) REFERENCES [LESSON].[PROJECT]([id]
+);

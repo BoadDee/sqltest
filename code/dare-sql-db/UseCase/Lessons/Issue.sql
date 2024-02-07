@@ -1,0 +1,13 @@
+CREATE TABLE [LESSON].[ISSUE] (
+    [id] INT NOT NULL PRIMARY KEY,
+    [Title] NVARCHAR(50) NOT NULL,
+    [Description] NVARCHAR(250) NULL,
+    [RootCause] NVARCHAR(250) NULL,
+    [CostImpact] NVARCHAR(50,2) NULL,
+    [LessonId] INT NOT NULL,
+    [ScheduleImpact] NVARCHAR(250) NULL,
+    [Likelihood] NVARCHAR(250) NULL,
+    [updatedOn] DATETIME NULL,
+ CONTRAINT [FK_LESSON_ISSUE_LESSON] FOREIGN KEY ([LessonId]) REFERENCES [LESSON].[LESSON]([id]
+);
+
