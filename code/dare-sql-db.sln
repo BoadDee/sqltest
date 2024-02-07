@@ -1,7 +1,7 @@
 VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
 
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dare_sql_db", "dare_sql_db\dare_sql_db.sqlproj", "{8CDD8387-B905-44A8-B5D5-07BB50E05BEA}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dare_sql_db", "dare_sql_db\dare_sql_db.sqlproj", "{B306DCCA-4049-48D2-9FB8-F79AF057DC40}"
 EndProject
 Global
   GlobalSection(SolutionNotes) = postSolution
@@ -13,10 +13,10 @@ Global
   GlobalSection(ProjectDependencies) = postSolution
   EndGlobalSection
   GlobalSection(ProjectConfiguration) = postSolution
-   {8CDD8387-B905-44A8-B5D5-07BB50E05BEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-   {8CDD8387-B905-44A8-B5D5-07BB50E05BEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-   {8CDD8387-B905-44A8-B5D5-07BB50E05BEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-   {8CDD8387-B905-44A8-B5D5-07BB50E05BEA}.Release|Any CPU.Build.0 = Release|Any CPU
+   {B306DCCA-4049-48D2-9FB8-F79AF057DC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+   {B306DCCA-4049-48D2-9FB8-F79AF057DC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+   {B306DCCA-4049-48D2-9FB8-F79AF057DC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+   {B306DCCA-4049-48D2-9FB8-F79AF057DC40}.Release|Any CPU.Build.0 = Release|Any CPU
   EndGlobalSection
   GlobalSection(ExtensibilityGlobals) = postSolution
   EndGlobalSection
