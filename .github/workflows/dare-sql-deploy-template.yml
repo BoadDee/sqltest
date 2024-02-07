@@ -57,13 +57,13 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          dacpac-package: ${{ github.workspace }}/dare-sql-db/${{ inputs.dacpacName }}
+          dacpac-package: ${{ github.workspace }}/${{ inputs.dacpacName }}
           additional-arguments: '/p:BlockOnPossibleDataLoss=false'
 
-      - name: Deploy dacpac
-        uses: Azure/sql-action@v2.2
-        with:
-          connection-string:
-          path: ${{ github.workspace }}/${{ inputs.dacpacName }}
-          additional-arguments: '/p:BlockOnPossibleDataLoss=false'
-          action: 'Publish'
+      # - name: Deploy dacpac
+      #   uses: Azure/sql-action@v2.2
+      #   with:
+      #     connection-string:
+      #     path: ${{ github.workspace }}/${{ inputs.dacpacName }}
+      #     additional-arguments: '/p:BlockOnPossibleDataLoss=false'
+      #     action: 'Publish'
