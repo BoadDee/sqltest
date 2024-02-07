@@ -52,7 +52,7 @@ jobs:
     needs: build
     with:
       environment: de
-      dacpac: DareDacpac
+      artifactName: DareDacpac
       dacpacName: dare-sql-db.dacpac
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
