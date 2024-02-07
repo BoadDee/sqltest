@@ -41,7 +41,8 @@ jobs:
       environment: de
       dacpac: DareDacpac
       dacpacName: dare-sql-db.dacpac
-      server: dare-sql.database.windows.net # ${{ secrets.SQL_SERVER }}
+    secrets:
+      server: ${{ secrets.SQL_SERVER }}
       database: ${{ secrets.SQL_DATABASE }}
       username: ${{ secrets.SQL_USERNAME }}
       password: ${{ secrets.SQL_PASSWORD }}
