@@ -34,10 +34,10 @@ jobs:
           path: ${{ github.workspace}}SQL/code/dare-sql-db/bin/Release
     
   deploy_de:
-    uses: ./.github/workflow/dare-sql-deploy-template.yml
+    uses: ./.github/workflows/dare-sql-deploy-template.yml
     needs: build
     with:
-      environment: dev
+      environment: de
       dacpac: DareDacpac
       dacpacName: dare-sql-db.dacpac
       server: ${{ secrets.SQL_SERVER }}
